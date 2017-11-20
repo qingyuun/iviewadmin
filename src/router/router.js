@@ -66,106 +66,184 @@ export const otherRouter = {
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
     {
-        path: '/access',
-        icon: 'key',
-        name: 'access',
-        title: '权限管理',
+        path: '/home',
+        icon: 'home',
+        name: 'hom',
+        title: '系统首页',
         component: Main,
         children: [
-            { path: 'index', title: '权限管理', name: 'access_index', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
+            { path: '#', title: '系统首页', name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } }
         ]
     },
-    {
-        path: '/access-test',
-        icon: 'lock-combination',
-        title: '权限测试页',
-        name: 'accesstest',
-        access: 0,
-        component: Main,
-        children: [
-            { path: 'index', title: '权限测试页', name: 'accesstest_index' }
-        ]
-    },
-    {
-        path: '/international',
-        icon: 'earth',
-        title: {i18n: 'international'},
-        name: 'international',
-        component: Main,
-        children: [
-            { path: 'index', title: {i18n: 'international'}, name: 'international_index', component: resolve => { require(['@/views/international/international.vue'], resolve); } }
-        ]
-    },
+    // {
+    //     path: '/access',
+    //     icon: 'key',
+    //     name: 'access',
+    //     title: '权限管理',
+    //     component: Main,
+    //     children: [
+    //         { path: 'index', title: '权限管理', name: 'access_index', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
+    //     ]
+    // },
+    // {
+    //     path: '/access-test',
+    //     icon: 'lock-combination',
+    //     title: '权限测试页',
+    //     name: 'accesstest',
+    //     access: 0,
+    //     component: Main,
+    //     children: [
+    //         { path: 'index', title: '权限测试页', name: 'accesstest_index' }
+    //     ]
+    // },
+    // {
+    //     path: '/international',//多语言设置
+    //     icon: 'earth',
+    //     title: {i18n: 'international'},
+    //     name: 'international',
+    //     component: Main,
+    //     children: [
+    //         { path: 'index', title: {i18n: 'international'}, name: 'international_index', component: resolve => { require(['@/views/international/international.vue'], resolve); } }
+    //     ]
+    // },
     {
         path: '/component',
-        icon: 'social-buffer',
+        icon: 'plus-circled',
         name: 'component',
-        title: '组件',
+        title: '业务办理',
         component: Main,
         children: [
             {
-                path: 'text-editor',
-                icon: 'compose',
-                name: 'text-editor',
-                title: '富文本编辑器',
+                path: 'case_check',
+                icon: 'checkmark',
+                name: 'case_check',
+                title: '案件预检',
                 component: resolve => { require(['@/views/my-components/text-editor/text-editor.vue'], resolve); }
             },
             {
-                path: 'md-editor',
-                icon: 'pound',
-                name: 'md-editor',
-                title: 'Markdown编辑器',
+                path: 'case_add',
+                icon: 'plus',
+                name: 'case_add',
+                title: '添加案件',
                 component: resolve => { require(['@/views/my-components/markdown-editor/markdown-editor.vue'], resolve); }
             },
             {
-                path: 'image-editor',
-                icon: 'crop',
-                name: 'image-editor',
-                title: '图片预览编辑',
+                path: 'case_manage',
+                icon: 'grid',
+                name: 'case_manage',
+                title: '案件管理',
                 component: resolve => { require(['@/views/my-components/image-editor/image-editor.vue'], resolve); }
             },
             {
-                path: 'draggable-list',
-                icon: 'arrow-move',
-                name: 'draggable-list',
-                title: '可拖拽列表',
+                path: 'case_applyend',
+                icon: 'pound',
+                name: 'case_applyend',
+                title: '申请结案',
                 component: resolve => { require(['@/views/my-components/draggable-list/draggable-list.vue'], resolve); }
             },
             {
-                path: 'area-linkage',
-                icon: 'ios-more',
-                name: 'area-linkage',
-                title: '城市级联',
+                path: 'case_pass',
+                icon: 'checkmark-circled',
+                name: 'case_pass',
+                title: '审批管理',
                 component: resolve => { require(['@/views/my-components/area-linkage/area-linkage.vue'], resolve); }
             },
             {
-                path: 'file-upload',
-                icon: 'android-upload',
-                name: 'file-upload',
-                title: '文件上传',
+                path: 'case_sign',
+                icon: 'ios-pricetag',
+                name: 'case_sign',
+                title: '盖章管理',
                 component: resolve => { require(['@/views/my-components/file-upload/file-upload.vue'], resolve); }
             },
             {
+                path: 'case_supplemental',
+                icon: 'archive',
+                name: 'case_supplemental',
+                title: '补充案件材料',
+                component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
+            },
+            {
+                path: 'casee_contractArchiving',
+                icon: 'android-archive',    
+                name: 'casee_contractArchiving',
+                title: '合同归档管理',
+                component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
+            },
+            {
                 path: 'count-to',
-                icon: 'arrow-graph-up-right',
+                icon: 'pound',
                 name: 'count-to',
-                title: '数字渐变',
+                title: '结案管理',
+                component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
+            },
+            {
+                path: 'count-to',
+                icon: 'archive',
+                name: 'count-to',
+                title: '归档管理',
+                component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
+            },
+            {
+                path: 'count-to',
+                icon: 'arrow-swap',
+                name: 'count-to',
+                title: '案件转移',
                 component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
             }
         ]
     },
     {
-        path: '/form',
-        icon: 'android-checkbox',
-        name: 'form',
-        title: '表单编辑',
+        path: '/client',
+        icon: 'key',
+        name: 'client',
+        title: '客户管理',
         component: Main,
         children: [
-            { path: 'artical-publish', title: '文章发布', name: 'artical-publish', icon: 'compose', component: resolve => { require(['@/views/form/article-publish/article-publish.vue'], resolve); } },
-            { path: 'workflow', title: '工作流', name: 'workflow', icon: 'arrow-swap', component: resolve => { require(['@/views/form/work-flow/work-flow.vue'], resolve); } }
-
+            { path: 'client', title: '客户管理', name: 'client', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
         ]
     },
+    {
+        path: '/ContactsList',
+        icon: 'key',
+        name: 'ContactsList',
+        title: '用户通讯录',
+        component: Main,
+        children: [
+            { path: 'ContactsList', title: '用户通讯录', name: 'ContactsList', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
+        ]
+    },
+    {
+        path: '/BulletinList',
+        icon: 'key',
+        name: 'BulletinList',
+        title: '公告列表',
+        component: Main,
+        children: [
+            { path: 'BulletinList', title: '公告列表', name: 'BulletinList', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
+        ]
+    },
+    {
+        path: '/ContactsList',
+        icon: 'key',
+        name: 'ContactsList',
+        title: '文书模板',
+        component: Main,
+        children: [
+            { path: 'ContactsList', title: '文书模板', name: 'ContactsList', component: resolve => { require(['@/views/access/access.vue'], resolve); } }
+        ]
+    },
+    // {
+    //     path: '/form',
+    //     icon: 'android-checkbox',
+    //     name: 'form',
+    //     title: '客户管理',
+    //     component: Main,
+    //     children: [
+    //         { path: 'artical-publish', title: '文章发布', name: 'artical-publish', icon: 'compose', component: resolve => { require(['@/views/form/article-publish/article-publish.vue'], resolve); } },
+    //         { path: 'workflow', title: '工作流', name: 'workflow', icon: 'arrow-swap', component: resolve => { require(['@/views/form/work-flow/work-flow.vue'], resolve); } }
+
+    //     ]
+    // },
     // {
     //     path: '/charts',
     //     icon: 'ios-analytics',
@@ -179,10 +257,10 @@ export const appRouter = [
     //     ]
     // },
     {
-        path: '/tables',
+        path: '/user',
         icon: 'ios-grid-view',
-        name: 'tables',
-        title: '表格',
+        name: 'user',
+        title: '用户管理',
         component: Main,
         children: [
             { path: 'dragableTable', title: '可拖拽排序', name: 'dragable-table', icon: 'arrow-move', component: resolve => { require(['@/views/tables/dragable-table.vue'], resolve); } },
@@ -211,6 +289,16 @@ export const appRouter = [
         component: Main,
         children: [
             { path: 'index', title: '错误页面', name: 'errorpage_index', component: resolve => { require(['@/views/error-page/error-page.vue'], resolve); } }
+        ]
+    },
+    {
+        path: '/help',
+        icon: 'help-circled',
+        title: '帮助中心',
+        name: 'help',
+        component: Main,
+        children: [
+            { path: 'help', title: '帮助中心', name: 'help', component: resolve => { require(['@/views/error-page/error-page.vue'], resolve); } }
         ]
     }
 ];
