@@ -1,3 +1,9 @@
+/*
+ * @Author: mikey.zhaopeng 
+ * @Date: 2017-11-21 18:45:15 
+ * @Last Modified by:   mikey.zhaopeng 
+ * @Last Modified time: 2017-11-21 18:45:15 
+ */
 // Exports the "searchreplace" plugin for usage with module loaders
 // Usage:
 //   CommonJS:

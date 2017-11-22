@@ -1,3 +1,4 @@
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -44,8 +45,7 @@ module.exports = merge(webpackBaseConfig, {
                 warnings: false
             }
         }),
-        new CopyWebpackPlugin([
-            {
+        new CopyWebpackPlugin([{
                 from: 'src/styles/simplemde.min.css'
             },
             {

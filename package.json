@@ -1,8 +1,10 @@
 {
-  "name": "iview-admin",
+  "name": "oa",
   "version": "1.2.0",
-  "description": "a management bases on iview",
+  "description": "由iviewadmin项目源码改为oa项目",
   "main": "index.js",
+  "author": "綪蕓<zheng2223021713@hotmail.com>",
+  "license": "MIT",
   "scripts": {
     "init": "webpack --progress --config build/webpack.dev.config.js",
     "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --config build/webpack.dev.config.js",
@@ -14,8 +16,8 @@
     "type": "git",
     "url": "https://github.com/iview/iview-admin.git"
   },
-  "author": "",
-  "license": "MIT",
+  
+
   "dependencies": {
     "area-data": "^1.0.0",
     "axios": "^0.15.3",

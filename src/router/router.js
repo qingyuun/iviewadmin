@@ -55,17 +55,16 @@ export const otherRouter = {
     name: 'otherRouter',
     component: Main,
     children: [
-        { path: 'home', title: {i18n: 'home'}, name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } },
+        { path: 'home', title: { i18n: 'home' }, name: 'home_index', component: resolve => { require(['@/views/home/home.vue'], resolve); } },
         { path: 'ownspace', title: '个人中心', name: 'ownspace_index', component: resolve => { require(['@/views/own-space/own-space.vue'], resolve); } },
-        { path: 'order/:order_id', title: '订单详情', name: 'order_info', component: resolve => { require(['@/views/advanced-router/component/order-info.vue'], resolve); } },  // 用于展示动态路由
-        { path: 'shopping', title: '购物详情', name: 'shopping', component: resolve => { require(['@/views/advanced-router/component/shopping-info.vue'], resolve); } },  // 用于展示带参路由
+        { path: 'order/:order_id', title: '订单详情', name: 'order_info', component: resolve => { require(['@/views/advanced-router/component/order-info.vue'], resolve); } }, // 用于展示动态路由
+        { path: 'shopping', title: '购物详情', name: 'shopping', component: resolve => { require(['@/views/advanced-router/component/shopping-info.vue'], resolve); } }, // 用于展示带参路由
         { path: 'message', title: '消息中心', name: 'message_index', component: resolve => { require(['@/views/message/message.vue'], resolve); } }
     ]
 };
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
-export const appRouter = [
-    {
+export const appRouter = [{
         path: '/home',
         icon: 'home',
         name: 'hom',
@@ -107,39 +106,53 @@ export const appRouter = [
     //     ]
     // },
     {
-        path: '/component',
+        path: '/LawyerCase',
         icon: 'plus-circled',
-        name: 'component',
+        name: 'LawyerCase',
         title: '业务办理',
         component: Main,
-        children: [
-            {
+        children: [{
                 path: 'case_check',
                 icon: 'checkmark',
                 name: 'case_check',
                 title: '案件预检',
-                component: resolve => { require(['@/views/my-components/text-editor/text-editor.vue'], resolve); }
+                component: resolve => { require(['@/views/case/lawyer/check.vue'], resolve); }
             },
             {
                 path: 'case_add',
                 icon: 'plus',
                 name: 'case_add',
                 title: '添加案件',
-                component: resolve => { require(['@/views/my-components/markdown-editor/markdown-editor.vue'], resolve); }
+                component: resolve => { require(['@/views/case/lawyer/add.vue'], resolve); }
             },
             {
                 path: 'case_manage',
                 icon: 'grid',
                 name: 'case_manage',
                 title: '案件管理',
-                component: resolve => { require(['@/views/my-components/image-editor/image-editor.vue'], resolve); }
+                component: resolve => { require(['@/views/case/lawyer/manage.vue'], resolve); }
             },
             {
                 path: 'case_applyend',
                 icon: 'pound',
                 name: 'case_applyend',
                 title: '申请结案',
-                component: resolve => { require(['@/views/my-components/draggable-list/draggable-list.vue'], resolve); }
+                component: resolve => { require(['@/views/case/lawyer/end.vue'], resolve); }
+            }
+        ]
+    },
+    {
+        path: '/ManagerCase',
+        icon: 'plus-circled',
+        name: 'ManagerCase',
+        title: '案件管理',
+        component: Main,
+        children: [{
+                path: 'case_check',
+                icon: 'checkmark',
+                name: 'case_check',
+                title: '案件预检',
+                component: resolve => { require(['@/views/case/manager/check.vue'], resolve); }
             },
             {
                 path: 'case_pass',
@@ -164,7 +177,7 @@ export const appRouter = [
             },
             {
                 path: 'casee_contractArchiving',
-                icon: 'android-archive',    
+                icon: 'android-archive',
                 name: 'casee_contractArchiving',
                 title: '合同归档管理',
                 component: resolve => { require(['@/views/my-components/count-to/count-to.vue'], resolve); }
